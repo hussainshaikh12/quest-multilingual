@@ -1,22 +1,25 @@
-id: funneldrop_fixing_bug_pr
+id: multilingual_translate_authpage
 learningObjectives: 
-- Fixing a bug 
+- Handling translations across various components 
 hints:
-- Try to inspect the problematic view and see where it is on the screen
+- Make sure you have added the required id and values specified and the value also changes 
 startFlow:
   do:
   - actionId: bot_message
     params:
       person: keen
       messages:
-      - text: "OK, I think we have everything we need. Can you please **fix the code** and **open a PR**, so we can release a new version to production?"
+      - text: "Now just translate the login and register page so that users can easily register and start shopping"
+        delay: 1500
+      - text: "Can you please transalte and **open a PR**, so we can release a new version to production?"
         delay: 1500
 githubActions:
   frontend:
     capabilities:
     - jest-puppeteer
     - puppeteer
-    testFile: "profile.test.js"
+    - languagedetect
+    testFile: "auth-page-language.test.js"
 trigger:
   type: github_pr_lifecycle_status
   flowNode:

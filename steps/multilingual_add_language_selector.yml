@@ -1,0 +1,66 @@
+id: multilingual_add_language_selector
+learningObjectives: 
+- Creating a statefull component
+hints:
+- Make sure you have used the required id and values specified and the value also changes 
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: keen
+      messages:
+      - text: "![](https://drive.google.com/file/d/1XvoAwpUl51Bae9X-owtYo2biS9-Cphyn)"
+        delay: 0
+      - text: "Add a selector similar to this to your header and make sure it has an id set-language. It should have the option fields with their value as the language code and the language name. Make sure that the selector works properly."
+        delay: 1500
+githubActions:
+  frontend:
+    capabilities:
+    - jest-puppeteer
+    - puppeteer
+    testFile: "language_selector.test.js"
+trigger:
+  type: github_pr_lifecycle_status
+  flowNode:
+    switch:
+      key: "${eventType}"
+      cases:
+        github_pr_opened:
+          do:
+          - actionId: bot_message
+            params:
+              person: keen
+              messages:
+              - text: "On it, I'll review the changes right away."
+                delay: 1000
+          - actionId: github_pr_comment
+            params:
+              person: keen
+              message: "On it, I'll review the changes right away."
+        github_pr_workflow_complete_success:
+          do:
+          - actionId: bot_message
+            params:
+              person: keen
+              messages:
+              - text: "Nailed it! Excellent job @${user.githubuser}! You can now merge the PR."
+                delay: 2000
+          - actionId: github_pr_approve
+            params:
+              person: keen
+              message: "Nailed it! Excellent job @${user.githubuser}! You can now merge the PR."
+        github_pr_workflow_complete_failure:
+          do:
+          - actionId: bot_message
+            params:
+              person: keen
+              messages:
+              - text: "Make sure your fix passes all the checks, then try again please."
+                delay: 3000
+          - actionId: github_pr_reject
+            params:
+              person: keen
+              message: "Looks like this code change didn’t fix the problem. Can you take a second look?"
+        github_pr_merged:
+          do:
+          - actionId: finish_step

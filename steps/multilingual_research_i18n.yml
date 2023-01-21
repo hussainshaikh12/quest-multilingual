@@ -1,0 +1,42 @@
+id: multilingual_research_i18n
+learningObjectives: 
+- Analyzing the best i18n library
+hints:
+- Research and come up with the most popular library to implement internationalization
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: keen
+      messages:
+      - text: "suggest the best library you could use here after your research"
+        delay: 2000
+trigger:
+  type: user_message
+  params: 
+    person: keen
+  flowNode:
+    if:
+      conditions:
+      - conditionId: text_match_regex
+        params:
+          text: "${userMessageText}"
+          regex: redux-i18n|i18next
+          flags: i
+      then:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: Good catch! Now get your hands dirty and try it out
+              delay: 1300
+        - actionId: finish_step
+      else:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: Try again! I'm sure you'll figure this out.
+              delay: 2500

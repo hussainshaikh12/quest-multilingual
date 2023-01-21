@@ -4,14 +4,15 @@ description: "passons à l'échelle mondiale. what's that !!?? you would possibl
 summary: "Are you tired of your software only speaking one language? Well, buckle up buttercup because it's time to take your code on a wild ride through the world of internationalization!. In today's globalized society, it's important to make sure your software can communicate with users from all around the world. Can you imagine trying to order a croissant in France with a marketplace that only spoke English? and that's just a recipe for disaster. Internationalization is the process of designing software that can adapt to different languages and cultures. This way, no matter where your users are located, they'll be able to understand and use your software without any hiccups. So, grab your tools and brace yourself, because it's time to embark on the developer quest of a lifetime: making your software fluent in multiple languages."
 level: intermediate
 steps:
-- funneldrop_analyze_data
-- funneldrop_reproduce_locally
-- funneldrop_fixing_bug_pr
+- multilingual_add_language_selector
+- multilingual_research_i18n
+- multilingual_implement_i18n
+- multilingual_translate_authpage
 duration: 1.5
 skills:
 - frontend
+- setup
 - debugging
-- observability
 - communication
 questDependency: docker_localsetup
 slogan: Let's go Global...
