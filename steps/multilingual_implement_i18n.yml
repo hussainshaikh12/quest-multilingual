@@ -11,11 +11,13 @@ startFlow:
       messages:
       - text: "Translate all the text in the navbar"
         delay: 1500
+      - text: "Can you please transalte and **open a PR**. Make sure you hurry up many users are stranded"
+        delay: 1500
 githubActions:
   frontend:
     capabilities:
     - jest-puppeteer
-    - puppeteer
+    - puppeteer@18.1.0
     - languagedetect
     testFile: "navbar-language.test.js"
 trigger:

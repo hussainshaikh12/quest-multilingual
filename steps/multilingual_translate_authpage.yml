@@ -17,7 +17,7 @@ githubActions:
   frontend:
     capabilities:
     - jest-puppeteer
-    - puppeteer
+    - puppeteer@18.1.0
     - languagedetect
     testFile: "auth-page-language.test.js"
 trigger:

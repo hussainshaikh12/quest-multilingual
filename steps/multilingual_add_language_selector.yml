@@ -9,16 +9,18 @@ startFlow:
     params:
       person: keen
       messages:
-      - text: "![](https://drive.google.com/file/d/1XvoAwpUl51Bae9X-owtYo2biS9-Cphyn)"
+      - text: "![image](https://drive.google.com/file/d/1XvoAwpUl51Bae9X-owtYo2biS9-Cphyn)"
         delay: 0
       - text: "Add a selector similar to this to your header and make sure it has an id set-language. It should have the option fields with their value as the language code and the language name. Make sure that the selector works properly."
+        delay: 1500
+      - text: "Open a PR and let me know so that I can review your code"
         delay: 1500
 githubActions:
   frontend:
     capabilities:
     - jest-puppeteer
-    - puppeteer
-    testFile: "language_selector.test.js"
+    - puppeteer@18.1.0
+    testFile: "language-selector.test.js"
 trigger:
   type: github_pr_lifecycle_status
   flowNode:
