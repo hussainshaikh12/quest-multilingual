@@ -2,16 +2,16 @@ id: multilingual_translate_authpage
 learningObjectives: 
 - Handling translations across various components 
 hints:
-- Make sure you have added the required id and values specified and the value also changes 
+- Make sure all the text of login and register page is being translated including placeholders
 startFlow:
   do:
   - actionId: bot_message
     params:
       person: keen
       messages:
-      - text: "Now just translate the login and register page so that users can easily register and start shopping"
+      - text: "Now just translate all the text on the login and register page so that our french users can easily register and start shopping"
         delay: 1500
-      - text: "Can you please transalte and **open a PR**, so we can release a new version to production?"
+      - text: "Then Open a PR, my loyal squire, and let me know so that I may review thy code and ensure its righteousness"
         delay: 1500
 githubActions:
   frontend:
@@ -32,36 +32,40 @@ trigger:
             params:
               person: keen
               messages:
-              - text: "On it, I'll review the changes right away."
+              - text: "On it, my squire. I shall review the changes with utmost urgency and provide my royal feedback."
                 delay: 1000
           - actionId: github_pr_comment
             params:
               person: keen
-              message: "On it, I'll review the changes right away."
+              message: "On it, my squire. I shall review the changes with utmost urgency and provide my royal feedback."
         github_pr_workflow_complete_success:
           do:
           - actionId: bot_message
             params:
               person: keen
               messages:
-              - text: "Nailed it! Excellent job @${user.githubuser}! You can now merge the PR."
+              - text: "Excellent work @${user.githubuser}, my faithful squire. Thou may now merge the pull request."
                 delay: 2000
+              - text: "You my squire have brought glory to the marketplace of Anythink."
+              - text: "Now we wont lose our french users. Though we still have a lot to translate but will call it a day."
+              
+              
           - actionId: github_pr_approve
             params:
               person: keen
-              message: "Nailed it! Excellent job @${user.githubuser}! You can now merge the PR."
+              message: "Excellent work @${user.githubuser}, my faithful squire. Thou may now merge the pull request."
         github_pr_workflow_complete_failure:
           do:
           - actionId: bot_message
             params:
               person: keen
               messages:
-              - text: "Make sure your fix passes all the checks, then try again please."
+              - text: "Ensure that thy fix pass all the checks and tests, then try again, good developer. Do not disappoint me."
                 delay: 3000
           - actionId: github_pr_reject
             params:
               person: keen
-              message: "Looks like this code change didn’t fix the problem. Can you take a second look?"
+              message: "Verily, it seems that this alteration in code doth not fix the problem at hand. I beseech thee, my trusty developer, to take another look and see if perchance there is another solution to be found."
         github_pr_merged:
           do:
           - actionId: finish_step

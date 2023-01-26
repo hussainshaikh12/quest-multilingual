@@ -2,14 +2,25 @@ id: multilingual_research_i18n
 learningObjectives: 
 - Analyzing the best i18n library
 hints:
-- Research and come up with the most popular library to implement internationalization
+- Research and come up with the most popular(or like top 3) library to implement internationalization 
+- Try a library that fits with redux and also supports i18n
 startFlow:
   do:
   - actionId: bot_message
     params:
       person: keen
       messages:
-      - text: "suggest the best library you could use here after your research"
+      - text: "Now that you have made the UI component, you real tasks begins"
+        delay: 2000
+      - text: "Do you remember why you joined the company? You joined us to grow and here is your opportunity to grow"
+        delay: 2000
+      - text: "Now you have to implement the whole internationalization(i18n) framework from scratch which will do the task of magically turning the text on navbar to french when the french language is selected."
+        delay: 2000
+      - text: "Just kidding, here is a pro tip you need to learn that every developer needs to master to become sucessful that is **Research**"
+        delay: 10000
+      - text: "You dont have to build the wheel from scratch. Suggest the best library you could use here after your research"
+        delay: 2000
+      - text: "Make sure to read the documentation and figure out whether it could work in our setup"
         delay: 2000
 trigger:
   type: user_message
@@ -21,7 +32,7 @@ trigger:
       - conditionId: text_match_regex
         params:
           text: "${userMessageText}"
-          regex: redux-i18n|i18next
+          regex: redux-i18n|i18next|react-redux-i18n|react-i18next|react-intl-universal|i18n-react
           flags: i
       then:
         do:
@@ -29,7 +40,7 @@ trigger:
           params:
             person: keen
             messages:
-            - text: Good catch! Now get your hands dirty and try it out
+            - text: "Amazing! Now go and read the documentation and lets implement i18n"
               delay: 1300
         - actionId: finish_step
       else:
@@ -38,5 +49,5 @@ trigger:
           params:
             person: keen
             messages:
-            - text: Try again! I'm sure you'll figure this out.
+            - text: "Try again! I'm sure you'll figure this out."
               delay: 2500

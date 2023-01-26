@@ -3,16 +3,20 @@ learningObjectives:
 - Learning to implement i18n
 hints:
 - Are you sure all the text of the navbar is translated even the selector values ?  
+- Make sure to add the library in your package.json
 startFlow:
   do:
   - actionId: bot_message
     params:
       person: keen
       messages:
-      - text: "Translate all the text in the navbar"
-        delay: 1500
-      - text: "Can you please transalte and **open a PR**. Make sure you hurry up many users are stranded"
-        delay: 1500
+      - text: "Ok so im pretty sure you did not read the whole documentation."
+        delay: 9000
+      - text: "Make sure you do and you are aware of the setup of i18n from the library you chose and stick to it."
+        delay: 2000
+      - text: "After that, setup i18n and translate all the text in the navbar."
+      - text: "Then Open a PR, my loyal squire, and let me know so that I may review thy code and ensure its righteousness"
+        delay: 2000
 githubActions:
   frontend:
     capabilities:
@@ -32,36 +36,36 @@ trigger:
             params:
               person: keen
               messages:
-              - text: "On it, I'll review the changes right away."
+              - text: "On it, my squire. I shall review the changes with utmost urgency and provide my royal feedback."
                 delay: 1000
           - actionId: github_pr_comment
             params:
               person: keen
-              message: "On it, I'll review the changes right away."
+              message: "On it, my squire. I shall review the changes with utmost urgency and provide my royal feedback."
         github_pr_workflow_complete_success:
           do:
           - actionId: bot_message
             params:
               person: keen
               messages:
-              - text: "Nailed it! Excellent job @${user.githubuser}! You can now merge the PR."
+              - text: "Excellent work @${user.githubuser}, my faithful squire. Thou may now merge the pull request."
                 delay: 2000
           - actionId: github_pr_approve
             params:
               person: keen
-              message: "Nailed it! Excellent job @${user.githubuser}! You can now merge the PR."
+              message: "Excellent work @${user.githubuser}, my faithful squire. Thou may now merge the pull request."
         github_pr_workflow_complete_failure:
           do:
           - actionId: bot_message
             params:
               person: keen
               messages:
-              - text: "Make sure your fix passes all the checks, then try again please."
+              - text: "Ensure that thy fix pass all the checks and tests, then try again, good developer. Do not disappoint me."
                 delay: 3000
           - actionId: github_pr_reject
             params:
               person: keen
-              message: "Looks like this code change didn’t fix the problem. Can you take a second look?"
+              message: "Verily, it seems that this alteration in code doth not fix the problem at hand. I beseech thee, my trusty developer, to take another look and see if perchance there is another solution to be found."
         github_pr_merged:
           do:
           - actionId: finish_step

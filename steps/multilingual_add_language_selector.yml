@@ -1,20 +1,31 @@
 id: multilingual_add_language_selector
 learningObjectives: 
-- Creating a statefull component
+- Creating a stateful component
 hints:
-- Make sure you have used the required id and values specified and the value also changes 
+- Make sure you have used the required id and values specified and the value also changes
+- Are you using proper language codes ?
 startFlow:
   do:
   - actionId: bot_message
     params:
       person: keen
       messages:
-      - text: "![image](https://drive.google.com/file/d/1XvoAwpUl51Bae9X-owtYo2biS9-Cphyn)"
+      - text: 'We are in such a bad situation that I have to use our last card of storytelling (Thats how you know we are in trouble). Also When I am extremely scared I try to write stories and speak in a royal tone. So hold tight to your keyboard and here it goes....'
+      - text: "The senior developer(Me), a regal figure in the realm of code, summoned the junior developer(You) to his chambers. The junior developer, a mere squire in the realm of code, approached with fear."
+      - text: 'The senior developer spoke in a booming voice, "Squire, I have a task of great importance for you. The marketplace of Anythink has seen a heavy influx of French subjects, and they are unable to navigate our lands due to the lack of French language support."'
+      - text: 'The junior developer bowed his head, "My lord, I am but a humble coder, I do not possess the skills to complete such a task."'
+      - text: 'The senior developers eyes glinted with determination, "Nay, squire, you possess the potential. I see in you the ability to become a great developer, one who can bring the marketplace of Anythink to new heights. I task you with the implementation of a translation system on our website, and I have high hopes for your success."'
+      - text: 'The junior developers heart swelled with pride, "I shall not disappoint you, my lord. I will work tirelessly to bring the French subjects to our marketplace and make them feel welcomed"'
+      - text: 'The senior developer clapped the junior developer on the shoulder, "I have faith in you, squire. Now, go forth and make me proud."'
+      - text: 'The junior developer bowed and set off on his quest, determined to make the senior developer proud and bring glory to the marketplace of Anythink."'
+      - text: 'You get the point We are in a nightmare! Our website is failing to support French and its left a million of our French users stranded and frustrated. Did somebody start selling some rare golden croissant ?? I have no clue where we got such a huge spike of french users from but this is a serious issue to the reputation and respect of our marketplace.'
+        delay: 5000
+      - text: "![image](https://drive.google.com/uc?export=view&id=1XvoAwpUl51Bae9X-owtYo2biS9-Cphyn)"
         delay: 0
-      - text: "Add a selector similar to this to your header and make sure it has an id set-language. It should have the option fields with their value as the language code and the language name. Make sure that the selector works properly."
-        delay: 1500
-      - text: "Open a PR and let me know so that I can review your code"
-        delay: 1500
+      - text: "So to begin your journey on this epic quest, Add a selector similar to this to your header and make sure it has an id as **'set-language'**. It should have the option fields with their value as the language code and the language name. Make sure that the selector works properly."
+        delay: 3000
+      - text: "Open a PR, my loyal squire, and let me know so that I may review thy code and ensure its righteousness"
+        delay: 4000
 githubActions:
   frontend:
     capabilities:
@@ -33,36 +44,36 @@ trigger:
             params:
               person: keen
               messages:
-              - text: "On it, I'll review the changes right away."
+              - text: "On it, my squire. I shall review the changes with utmost urgency and provide my royal feedback."
                 delay: 1000
           - actionId: github_pr_comment
             params:
               person: keen
-              message: "On it, I'll review the changes right away."
+              message: "On it, my squire. I shall review the changes with utmost urgency and provide my royal feedback."
         github_pr_workflow_complete_success:
           do:
           - actionId: bot_message
             params:
               person: keen
               messages:
-              - text: "Nailed it! Excellent job @${user.githubuser}! You can now merge the PR."
+              - text: "Excellent work @${user.githubuser}, my faithful squire. Thou may now merge the pull request."
                 delay: 2000
           - actionId: github_pr_approve
             params:
               person: keen
-              message: "Nailed it! Excellent job @${user.githubuser}! You can now merge the PR."
+              message: "Excellent work @${user.githubuser}, my faithful squire. Thou may now merge the pull request."
         github_pr_workflow_complete_failure:
           do:
           - actionId: bot_message
             params:
               person: keen
               messages:
-              - text: "Make sure your fix passes all the checks, then try again please."
+              - text: "Ensure that thy fix pass all the checks and tests, then try again, good developer. Do not disappoint me."
                 delay: 3000
           - actionId: github_pr_reject
             params:
               person: keen
-              message: "Looks like this code change didn’t fix the problem. Can you take a second look?"
+              message: "Verily, it seems that this alteration in code doth not fix the problem at hand. I beseech thee, my trusty developer, to take another look and see if perchance there is another solution to be found."
         github_pr_merged:
           do:
           - actionId: finish_step
