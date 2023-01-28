@@ -17,7 +17,7 @@ startFlow:
       - text: "Now you have to implement the whole internationalization(i18n) framework from scratch which will do the task of magically turning the text on navbar to french when the french language is selected."
         delay: 2000
       - text: "Just kidding, here is a pro tip you need to learn that every developer needs to master to become sucessful that is **Research**"
-        delay: 10000
+        delay: 13000
       - text: "You dont have to build the wheel from scratch. Suggest the best library you could use here after your research"
         delay: 2000
       - text: "Make sure to read the documentation and figure out whether it could work in our setup"
