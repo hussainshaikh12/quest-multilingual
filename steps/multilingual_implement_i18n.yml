@@ -10,12 +10,10 @@ startFlow:
     params:
       person: keen
       messages:
-      - text: "Ok so im pretty sure you did not read the whole documentation."
-        delay: 9000
-      - text: "Make sure you do and you are aware of the setup of i18n from the library you chose and stick to it."
-        delay: 2000
-      - text: "After that, setup i18n and translate all the text in the navbar."
-      - text: "Then Open a PR, my loyal squire, and let me know so that I may review thy code and ensure its righteousness"
+      - text: "Magnificent my squire!  But the journey has just begun. It is now time that you conquer the most important task in this adventurous quest. So go forth and delve deep into the documentation of the library and master its intricacies."
+        delay: 7000
+      - text: "After your mind has won over the war of understanding the implementation, setup i18n with care in our subtle and vast codebase and translate **all the text in the header**.  So when the language on the button of selection changes all the text of the header should also follow heed and change."
+      - text: "Then open a PR, my loyal squire, and let me know so that I may review thy code and ensure its righteousness"
         delay: 2000
 githubActions:
   frontend:

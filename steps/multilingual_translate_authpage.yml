@@ -9,10 +9,10 @@ startFlow:
     params:
       person: keen
       messages:
-      - text: "Now just translate all the text on the login and register page so that our french users can easily register and start shopping"
+      - text: "My squire, I see you close to victory. Now just translate all the text on the login and register page so that our french users can easily register and start shopping"
         delay: 1500
-      - text: "Then Open a PR, my loyal squire, and let me know so that I may review thy code and ensure its righteousness"
-        delay: 1500
+      - text: "Then open a PR, my loyal squire, and let me know so that I may review thy code and ensure its righteousness"
+        delay: 3000
 githubActions:
   frontend:
     capabilities:

@@ -10,18 +10,15 @@ startFlow:
     params:
       person: keen
       messages:
-      - text: "Now that you have made the UI component, you real tasks begins"
-        delay: 2000
-      - text: "Do you remember why you joined the company? You joined us to grow and here is your opportunity to grow"
-        delay: 2000
-      - text: "Now you have to implement the whole internationalization(i18n) framework from scratch which will do the task of magically turning the text on navbar to french when the french language is selected."
-        delay: 2000
-      - text: "Just kidding, here is a pro tip you need to learn that every developer needs to master to become sucessful that is **Research**"
-        delay: 13000
-      - text: "You dont have to build the wheel from scratch. Suggest the best library you could use here after your research"
-        delay: 2000
-      - text: "Make sure to read the documentation and figure out whether it could work in our setup"
-        delay: 2000
+      - text: 'We are in a nightmare! Our website is failing to support French and its left a million of our French users stranded and frustrated. Did somebody start selling some rare golden croissant ?? I have no clue where we got such a huge spike of french users from but this is a serious issue to the reputation and respect of our marketplace.'
+        delay: 2000 
+      - text: 'Also When I am extremely scared I try to write stories and speak in a royal tone. So hold tight to your keyboard and here it goes....'
+        delay: 4000 
+      - text: "The senior developer(Me), a regal figure in the realm of code, summoned the junior developer(You) to his chambers. The junior developer, a mere squire in the realm of code, approached with fear."
+      - text: 'The senior developer spoke in a booming voice, "Squire, I have a task of great importance for you. The marketplace of Anythink has seen a heavy influx of French subjects, and they are unable to navigate our lands due to the lack of French language support."'
+      - text: "You, my squire, don't be scared. I know you are young in this realm but I have faith in you. So go right now to the jungle of libraries and figure out the best internationalization(i18n) library for our setup."
+      - text: "My good developer, don't be hasty and be sure that you to read the documentation while you are hunting and only after your mind have conquered its knowledge, return to me with its name so that I may use my insights to guide you further."
+    
 trigger:
   type: user_message
   params: 
@@ -40,7 +37,7 @@ trigger:
           params:
             person: keen
             messages:
-            - text: "Amazing! Now go and read the documentation and lets implement i18n"
+            - text: "Well done, young developer. You have made a wise choice."
               delay: 1300
         - actionId: finish_step
       else:
@@ -49,5 +46,5 @@ trigger:
           params:
             person: keen
             messages:
-            - text: "Try again! I'm sure you'll figure this out."
+            - text: "Try again! my squire and dont lose hope. I'm sure you'll figure this out."
               delay: 2500
